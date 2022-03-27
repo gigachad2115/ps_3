@@ -1,0 +1,17 @@
+﻿@page
+@model PS3.Pages.ZapisaneModel
+@{
+    ViewData["Title"] = "Data in session";
+
+}
+@if (Model.Users.uzytkownicy.FirstOrDefault() != null)
+{
+    <div class="card saved">
+            @foreach (var item in Model.Users.uzytkownicy)
+            {
+                <p class="userData">@item.name , @item.year - @item.checkYear()</p>
+            }
+        </div>
+
+}
+    
